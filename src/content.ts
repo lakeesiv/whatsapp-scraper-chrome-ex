@@ -3,10 +3,10 @@ import { getElemetList, getMetaData, getName, getText } from "./utils";
 const main = () => {
   const elements = getElemetList();
 
-  Array.from(elements).forEach((element) => {
-    const text = getText(element as HTMLElement);
-    const name = getName(element as HTMLElement);
-    const meta = getMetaData(element as HTMLElement);
+  elements.forEach((element) => {
+    const text = getText(element as Element);
+    const name = getName(element as Element);
+    const meta = getMetaData(element as Element);
 
     const extraText =
       name && meta
