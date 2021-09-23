@@ -1,4 +1,10 @@
-import { getElemetList, getMetaData, getName, getText } from "./utils";
+import {
+  getElemetList,
+  getMetaData,
+  getName,
+  getText,
+  postData,
+} from "./utils";
 
 let extraTextList: string[] = [];
 
@@ -22,13 +28,7 @@ const main = () => {
       `
       );
       try {
-        const res = await fetch(
-          "http://localhost:5000/a/" +
-            `
-        ${extraText}
-        ${text}
-          `
-        );
+        const res = await postData(text, name, meta);
       } catch (error) {}
       extraTextList.push(extraText);
     }
