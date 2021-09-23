@@ -22,6 +22,6 @@ const main = () => {
   });
 };
 
-if ((window.location.href = "https://web.whatsapp.com/")) {
+if (window.location.href === "https://web.whatsapp.com/") {
   setInterval(main, 2000);
 }
