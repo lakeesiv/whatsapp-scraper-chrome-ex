@@ -5,7 +5,7 @@ let extraTextList: string[] = [];
 const main = () => {
   const elements = getElemetList();
 
-  elements.forEach((element) => {
+  elements.forEach(async (element) => {
     const text = getText(element as Element);
     const name = getName(element as Element);
     const meta = getMetaData(element as Element);
@@ -21,6 +21,15 @@ const main = () => {
     ${text}
       `
       );
+      try {
+        const res = await fetch(
+          "http://localhost:5000/a/" +
+            `
+        ${extraText}
+        ${text}
+          `
+        );
+      } catch (error) {}
       extraTextList.push(extraText);
     }
   });
