@@ -1,5 +1,7 @@
 import { getElemetList, getMetaData, getName, getText } from "./utils";
 
+let extraTextList: string[] = [];
+
 const main = () => {
   const elements = getElemetList();
 
@@ -12,13 +14,15 @@ const main = () => {
       name && meta
         ? `${name}: ${meta}\n${"-".repeat(1 + name.length + meta.length)}`
         : "";
-    if (text)
+    if (text && !extraTextList.includes(extraText)) {
       console.log(
         `
     ${extraText}
     ${text}
       `
       );
+      extraTextList.push(extraText);
+    }
   });
 };
 
