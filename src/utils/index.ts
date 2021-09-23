@@ -35,8 +35,8 @@ export const getText = (el: Element): string | undefined => {
 
 export const postData = async (
   text: string,
-  name: string | undefined,
-  metaData: string | undefined
+  name: string | undefined | null,
+  metaData: string | undefined | null
 ) => {
   const res = await fetch("http://localhost:6969/", {
     headers: {
