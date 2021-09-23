@@ -1,4 +1,5 @@
 import {
+  clickLatestText,
   getElemetList,
   getMetaData,
   getName,
@@ -13,6 +14,7 @@ const main = () => {
   const latest10Elemets = elementsArr.slice(
     Math.max(elementsArr.length - 10, 0)
   );
+  clickLatestText(latest10Elemets);
 
   latest10Elemets.forEach(async (element) => {
     const text = getText(element as Element);

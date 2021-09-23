@@ -13,6 +13,10 @@ export const getName = (el: Element): string | undefined => {
   }
 };
 
+export const clickLatestText = (elemetList: Element[]) => {
+  (elemetList[elemetList.length - 1] as HTMLElement).click();
+};
+
 export const getMetaData = (el: Element) => {
   try {
     return el
