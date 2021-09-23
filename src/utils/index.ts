@@ -32,3 +32,24 @@ export const getText = (el: Element): string | undefined => {
     return undefined;
   }
 };
+
+export const postData = async (
+  text: string,
+  name: string | undefined,
+  metaData: string | undefined
+) => {
+  const res = await fetch("http://localhost:6969/", {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify({
+      text: text,
+      name: name ? name : null,
+      metaData: metaData ? metaData : null,
+    }),
+  });
+
+  return res;
+};
